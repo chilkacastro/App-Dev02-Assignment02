@@ -1,4 +1,4 @@
-package com.example.assignment02_task02;
+package com.example.task02_usernames;
 
 import android.content.Context;
 
@@ -21,6 +21,6 @@ public class ExampleInstrumentedTest {
     public void useAppContext() {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getInstrumentation().getTargetContext();
-        assertEquals("com.example.assignment02_task02", appContext.getPackageName());
+        assertEquals("com.example.task02_usernames", appContext.getPackageName());
     }
 }

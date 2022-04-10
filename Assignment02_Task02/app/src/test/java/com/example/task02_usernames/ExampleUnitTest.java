@@ -1,4 +1,4 @@
-package com.example.assignment02_task02;
+package com.example.task02_usernames;
 
 import org.junit.Test;
 

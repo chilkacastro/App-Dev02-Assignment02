@@ -8,9 +8,9 @@
 
     <EditText
         android:id="@+id/firstNameEditText"
-        android:layout_width="408dp"
-        android:layout_height="53dp"
-        android:layout_marginTop="16dp"
+        android:layout_width="415dp"
+        android:layout_height="65dp"
+        android:layout_marginTop="24dp"
         android:ems="10"
         android:hint="First Name"
         android:inputType="textPersonName"
@@ -20,57 +20,57 @@
 
     <EditText
         android:id="@+id/lastNameEditText"
-        android:layout_width="408dp"
-        android:layout_height="53dp"
-        android:layout_marginTop="32dp"
+        android:layout_width="415dp"
+        android:layout_height="65dp"
+        android:layout_marginTop="16dp"
         android:ems="10"
         android:hint="Last Name"
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/firstNameEditText" />
 
     <Button
-        android:id="@+id/addButton"
-        android:layout_width="167dp"
-        android:layout_height="57dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:text="ADD"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/lastNameEditText" />
-
-    <Button
         android:id="@+id/updateButton"
-        android:layout_width="167dp"
-        android:layout_height="57dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="16dp"
+        android:layout_width="193dp"
+        android:layout_height="55dp"
+        android:layout_marginTop="8dp"
+        android:backgroundTint="#4786B8"
         android:text="UPDATE"
-        app:layout_constraintEnd_toEndOf="@id/lastNameEditText"
-        app:layout_constraintHorizontal_bias="0.51"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/addButton"
         app:layout_constraintTop_toBottomOf="@+id/lastNameEditText" />
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/UsersRecyclerView"
-        android:layout_width="408dp"
-        android:layout_height="402dp"
-        android:layout_marginTop="32dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.666"
+    <Button
+        android:id="@+id/addButton"
+        android:layout_width="193dp"
+        android:layout_height="55dp"
+        android:layout_marginTop="8dp"
+        android:backgroundTint="#9986BA"
+        android:text="ADD"
+        app:layout_constraintEnd_toStartOf="@+id/updateButton"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/updateButton" />
+        app:layout_constraintTop_toBottomOf="@+id/lastNameEditText" />
 
-    <View
-        android:id="@+id/divider"
-        android:layout_width="409dp"
-        android:layout_height="3dp"
-        android:background="#E39696"
-        android:backgroundTint="#BE81C8"
-        app:layout_constraintBottom_toTopOf="@+id/UsersRecyclerView"
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/usersRecyclerView"
+        android:layout_width="413dp"
+        android:layout_height="345dp"
+        android:layout_marginTop="20dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="393dp"
+        android:layout_height="21dp"
+        android:layout_marginTop="4dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.444"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/addButton" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
