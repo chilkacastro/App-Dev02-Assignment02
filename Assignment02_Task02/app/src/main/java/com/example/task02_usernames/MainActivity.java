@@ -49,7 +49,8 @@ public class MainActivity extends AppCompatActivity {
 
                 if (isInserted) {
                     Toast.makeText(MainActivity.this, "Data inserted successfully", Toast.LENGTH_LONG).show();
-                } else {
+                }
+                else {
                     Toast.makeText(MainActivity.this, "Data not inserted", Toast.LENGTH_LONG).show();
 
                 }
@@ -83,17 +84,19 @@ public class MainActivity extends AppCompatActivity {
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(linearLayoutManager);
         userNames = databaseHelper.readAllData();
-        if (userNames.size() > 0) {
+        if(userNames.size() > 0){
             recyclerView.setVisibility(View.VISIBLE);
             adapter = new RecyclerViewAdapter(this, userNames);
             recyclerView.setAdapter(adapter);
 
 
-        } else {
+        }else {
             recyclerView.setVisibility(View.GONE);
             Toast.makeText(this, "There is no user in the database. Start adding now",
                     Toast.LENGTH_LONG).show();
         }
 
     }
+
+
 }

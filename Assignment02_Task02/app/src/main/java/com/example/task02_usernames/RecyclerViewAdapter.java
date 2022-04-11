@@ -13,7 +13,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
+
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
@@ -23,9 +23,9 @@ import java.util.List;
  * Created by Chilka Castro on 4/10/2022.
  */
 public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.ViewHolder> {
-    private List<User> usersList;
-    private Context context;
-    private DatabaseHelper databaseHelper;
+    private final List<User> usersList;
+    private final Context context;
+    private final DatabaseHelper databaseHelper;
     private static User user;
 
     public RecyclerViewAdapter(Context context, List<User> usersList) {
@@ -90,3 +90,4 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
 
     }
 }
+

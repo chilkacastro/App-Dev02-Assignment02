@@ -51,10 +51,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         contentValues.put(COL_LASTNAME, user.getLname());
 
         long insertResult = db.insert(TABLE_NAME, null, contentValues);
-        if (insertResult == -1)
-            return false;
-        else
-            return true;
+        return insertResult != -1;
     }
 
     /**
@@ -69,10 +66,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         contentValues.put(COL_LASTNAME, user.getLname());
         long updateResult = db.update(TABLE_NAME, contentValues, COL_ID	+ "	= ?", new String[] {String.valueOf(user.getId())}); // do this for int id
         db.close();
-        if (updateResult == -1)
-            return false;
-        else
-            return true;
+        return updateResult != -1;
     }
 
     /**
