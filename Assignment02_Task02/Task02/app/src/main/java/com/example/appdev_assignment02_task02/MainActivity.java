@@ -4,16 +4,14 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.database.Cursor;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ImageButton;
 import android.widget.Toast;
 
 import java.util.ArrayList;
-import java.util.List;
+
 public class MainActivity extends AppCompatActivity {
     RecyclerView recyclerView;
     DatabaseHelper databaseHelper; // object of class database helper
@@ -21,7 +19,7 @@ public class MainActivity extends AppCompatActivity {
     int userId;
     Button btnAdd, btnUpdate;
     RecyclerViewAdapter adapter;
-    ArrayList<User> userNames = new ArrayList<User>();
+    ArrayList<User> userNamesList = new ArrayList<User>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,26 +35,31 @@ public class MainActivity extends AppCompatActivity {
         btnAdd = findViewById(R.id.addButton);
         btnUpdate = findViewById(R.id.updateButton);
 
-
         // ADD button functionality
         btnAdd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                User user = new User(editTextFirstName.getText().toString(), editTextLastName.getText().toString());
+                User user = new User(editTextFirstName.getText().toString(),
+                        editTextLastName.getText().toString());
                 boolean isInserted = databaseHelper.insertData(user);
 
                 if (isInserted) {
-                    Toast.makeText(MainActivity.this, "Data inserted successfully", Toast.LENGTH_LONG).show();
+                    Toast.makeText(MainActivity.this, "Data inserted successfully",
+                            Toast.LENGTH_LONG).show();
                     editTextLastName.setText("");
                     editTextFirstName.setText("");
+                    adapter.setItem(userNamesList);
+                    adapter.notifyDataSetChanged();
                 }
                 else {
-                    Toast.makeText(MainActivity.this, "Data not inserted", Toast.LENGTH_LONG).show();
+                    Toast.makeText(MainActivity.this, "Data not inserted",
+                            Toast.LENGTH_LONG).show();
 
                 }
 
             }
         });
+
 
         editTextLastName.setText(getIntent().getStringExtra("lname"));
         editTextFirstName.setText(getIntent().getStringExtra("fname"));
@@ -74,6 +77,7 @@ public class MainActivity extends AppCompatActivity {
                             Toast.LENGTH_SHORT).show();
                     editTextLastName.setText("");
                     editTextFirstName.setText("");
+
                 } else {
                     Toast.makeText(MainActivity.this, "Data not updated",
                             Toast.LENGTH_SHORT).show();
@@ -86,18 +90,17 @@ public class MainActivity extends AppCompatActivity {
         recyclerView = findViewById(R.id.usersRecyclerView);
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(linearLayoutManager);
-
         // fetch all data from database
-        userNames = databaseHelper.readAllData();
-        if(userNames.size() > 0){
-            recyclerView.setVisibility(View.VISIBLE);
-            adapter = new RecyclerViewAdapter(this, userNames); // send data to recyclerviewadapter
-            recyclerView.setAdapter(adapter);
+        userNamesList = databaseHelper.readAllData();
 
+        if(userNamesList.size() > 0){
+            recyclerView.setVisibility(View.VISIBLE);
+            adapter = new RecyclerViewAdapter(this, userNamesList); // send data to recyclerviewadapter
+            recyclerView.setAdapter(adapter);
 
         }else {
             recyclerView.setVisibility(View.GONE);
-            Toast.makeText(this, "There is no user in the database. Start adding now",
+            Toast.makeText(this, "There is no user in the database.",
                     Toast.LENGTH_LONG).show();
         }
 

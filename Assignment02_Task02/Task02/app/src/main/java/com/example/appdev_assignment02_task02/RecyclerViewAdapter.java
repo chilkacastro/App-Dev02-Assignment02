@@ -63,8 +63,11 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         holder.deleteImgBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                int position = holder.getLayoutPosition();
                 String userId = user.getId() + "";
                 databaseHelper.deleteData(userId);
+                usersList.remove(position);
+                notifyDataSetChanged();
                 Toast.makeText(context, "User deleted", Toast.LENGTH_LONG).show();
             }
         });
@@ -74,6 +77,10 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     @Override
     public int getItemCount() {
         return usersList.size();
+    }
+
+    public void setItem(ArrayList<User> userNamesList) {
+        this.usersList = userNamesList;
     }
 
     /**

@@ -1,5 +1,6 @@
 package com.example.appdev_assignment02_task02;
 
+
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.content.ContentValues;
@@ -67,7 +68,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         ContentValues contentValues = new ContentValues();
         contentValues.put(COL_FIRSTNAME, user.getFname()); // key and value pair
         contentValues.put(COL_LASTNAME, user.getLname());
-        long updateResult = db.update(TABLE_NAME, contentValues, COL_ID	+ "	= ?", new String[] {String.valueOf(user.getId())}); // do this for int id
+        long updateResult = db.update(TABLE_NAME, contentValues, COL_ID	+ "	= ?",
+                new String[] {String.valueOf(user.getId())}); // do this for int id
         db.close();
         if (updateResult == -1)
             return false;
