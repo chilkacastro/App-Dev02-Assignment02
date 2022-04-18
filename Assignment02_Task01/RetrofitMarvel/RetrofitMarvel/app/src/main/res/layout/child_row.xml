@@ -7,19 +7,19 @@
 
     <TextView
         android:id="@+id/nameTextView"
-        android:layout_width="188dp"
+        android:layout_width="160dp"
         android:layout_height="29dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
         android:text="TextView"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.511"
+        app:layout_constraintHorizontal_bias="0.562"
         app:layout_constraintStart_toEndOf="@+id/heroImageView"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
 
     <TextView
         android:id="@+id/realNameTextView"
-        android:layout_width="188dp"
+        android:layout_width="160dp"
         android:layout_height="29dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="12dp"
@@ -30,8 +30,8 @@
 
     <TextView
         android:id="@+id/teamTextView"
-        android:layout_width="188dp"
-        android:layout_height="29dp"
+        android:layout_width="160dp"
+        android:layout_height="33dp"
         android:layout_marginTop="18dp"
         android:layout_marginEnd="16dp"
         android:text="TextView"
@@ -41,21 +41,20 @@
 
     <ImageView
         android:id="@+id/heroImageView"
-        android:layout_width="133dp"
-        android:layout_height="125dp"
-        android:layout_marginStart="36dp"
+        android:layout_width="199dp"
+        android:layout_height="164dp"
+        android:layout_marginStart="4dp"
         android:layout_marginTop="16dp"
-        android:scaleType="centerInside"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:srcCompat="@tools:sample/avatars" />
 
     <TextView
         android:id="@+id/bioTextView"
-        android:layout_width="341dp"
-        android:layout_height="198dp"
+        android:layout_width="397dp"
+        android:layout_height="455dp"
         android:layout_marginTop="44dp"
-        android:layout_marginEnd="32dp"
+        android:layout_marginEnd="8dp"
         android:text="TextView"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -71,4 +70,18 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/bioTextView" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="162dp"
+        android:layout_height="47dp"
+        android:layout_marginTop="24dp"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:textAllCaps="true"
+        android:text="Marvel Information"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/heroImageView"
+        app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

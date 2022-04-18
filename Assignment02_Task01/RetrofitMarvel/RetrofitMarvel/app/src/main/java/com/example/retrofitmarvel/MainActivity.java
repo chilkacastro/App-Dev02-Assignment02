@@ -56,10 +56,8 @@ public class MainActivity extends AppCompatActivity {
                     heroes.get(i).getTeam(),
                     heroes.get(i).getImageurl(),
                     heroes.get(i).getBio());
-
                     heroesList.add(hero);
                 }
-
                 putDataIntoRecyclerView(heroesList);
             }
 
